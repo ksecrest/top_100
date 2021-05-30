@@ -5,6 +5,8 @@ class SongsController < ApplicationController
 
 before_action :set_artist
 before_action :set_song, only: [:show, :update, :destroy]
+#crud
+#read
 
   def index
     @songs = @artist.songs
@@ -16,11 +18,10 @@ before_action :set_song, only: [:show, :update, :destroy]
     render component: "Song", props: {artist: @artist, song: @song}
   end
 
-
+#create
   def new
     @song = @artist.songs.new
     render component: "SongNew", props: {artist: @artist, song: @song}
-
   end
 
   def create
@@ -31,6 +32,7 @@ before_action :set_song, only: [:show, :update, :destroy]
      render component: "SongNew", props: {artist: @artist, song: @song} 
     end
   end
+
   #update
   def edit
     render component: "SongEdit", props: {artist: @artist, song: @song}
@@ -41,8 +43,9 @@ before_action :set_song, only: [:show, :update, :destroy]
       redirect_to [@artist, @song]
     else
       render component: "SongEdit", props: {artist: @artist, song: @song}
+    end
   end
-
+#delete
   def destroy
     @song.destroy
     redirect_to artist_songs_path(@artist)
@@ -59,4 +62,6 @@ before_action :set_song, only: [:show, :update, :destroy]
   end
 
   def song_params
-    params.require(:song).permit()
+    params.require(:song).permit(:title, :length)
+  end
+end
