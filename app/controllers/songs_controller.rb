@@ -4,38 +4,39 @@ class SongsController < ApplicationController
 
 
 before_action :set_artist
-before_action :set_song, only: [:show, :update, :destroy]
+before_action :set_song, only: [:show, :edit, :update, :destroy]
 #crud
 #read
 
   def index
     @songs = @artist.songs
-    render component: "Songs", props: {artist: @artist, songs: @songs}
+    render component: "Songs", props: { songs: @songs, artist: @artist }
   end
 
   def show
     #grabs individual
-    render component: "Song", props: {artist: @artist, song: @song}
+    render component: "Song", props: { song: @song, artist: @artist }
   end
 
 #create
   def new
     @song = @artist.songs.new
-    render component: "SongNew", props: {artist: @artist, song: @song}
+    render component: "SongNew", props: { song: @song, artist: @artist }
   end
 
   def create
     @song = @artist.songs.new(song_params)
     if @song.save
-      redirect_to [@artist, @song]
+      # redirect_to [@artist, @song]
+      redirect_to artist_songs_path(@artist)
     else
-     render component: "SongNew", props: {artist: @artist, song: @song} 
+     render component: "SongNew", props: {song: @song, artist: @artist } 
     end
   end
 
   #update
   def edit
-    render component: "SongEdit", props: {artist: @artist, song: @song}
+    render component: "SongEdit", props: { song: @song, artist: @artist }
   end
   
   def update
