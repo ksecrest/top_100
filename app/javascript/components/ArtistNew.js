@@ -2,7 +2,7 @@ import React from 'react';
 
 const ArtistNew = ({ artist, billboard }) => {
   const { id } = billboard;
-  const { name, album, errors } = artist
+  const { name, album, errors } = artist;
   const defaultName = name ? name : ""
   const defaultAlbum = album ? album : ""
   return (
@@ -10,6 +10,7 @@ const ArtistNew = ({ artist, billboard }) => {
       <h1>New Artist!</h1>
       { errors && errors } 
       {/* if there are errors render errors, if not don't render anything */}
+      {/* /billboards/:billboard_id/artists/new(.:format) */}
       <form action={`/billboards/${id}/artists`} method="post">
         
         <input 

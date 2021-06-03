@@ -10,6 +10,8 @@ const Navbar = () => (
     <br />
     {"  "}
     <a href='/billboards'>Billboards</a>
+
+    
     </>
 )
 

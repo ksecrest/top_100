@@ -37,10 +37,10 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy ]
   def update
     if @artist.update(artist_params)
       # redirect_to [@billboard, @artist]
-      # redirect_to billboard_artists_path(@billboard)
-      redirect_to {@billboard, @artist}
+      redirect_to billboard_artists_path(@billboard)
+      
     else
-      render :edit
+      render component: "ArtistEdit", props: { artist: @artist, billboard: @billboard }
     end
   end
 
