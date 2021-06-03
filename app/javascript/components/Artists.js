@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Artists = ({ billboard, artists }) => {
   const { theme, id } = billboard
   //  billboard.id
@@ -12,7 +13,7 @@ const Artists = ({ billboard, artists }) => {
       {
         artists.map( (artist) => (
           <div>
-            <h3>{artist.theme}</h3>
+            <h3>{artist.name}</h3>
             <a href={url + '/' + artist.id}>Show Artist</a>
             {' '}
             <a href={url + '/' + artist.id + '/edit'}>Edit Artist</a>
@@ -25,3 +26,4 @@ const Artists = ({ billboard, artists }) => {
   )
 }
 export default Artists;
+

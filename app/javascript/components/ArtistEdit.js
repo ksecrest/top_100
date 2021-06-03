@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const ArtistEdit = ({ artist, billboard }) => {
   const { id } = billboard;
-  const { name, album, artist_id } = artist;
+  const { name, album, id } = artist;
   const defaultName = name ? name : "";
   const defaultAlbum = album ? album : "";
   return (

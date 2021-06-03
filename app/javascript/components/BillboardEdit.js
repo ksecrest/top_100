@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 const BillboardEdit = ({ billboard }) => {
   const { theme, id } = billboard
   const defaultTheme= theme ? theme : "";
   return (
     <>
-      <h1>Editing {theme} billboard</h1>
+      <h1>Edit {theme} billboard</h1>
       <form action={`/billboards/${id}`} method="post">
         <input type='hidden' name="_method" value="patch" />
         <input

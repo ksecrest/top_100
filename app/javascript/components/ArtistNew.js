@@ -1,34 +1,37 @@
-import React from "react";
+import React from 'react';
 
 const ArtistNew = ({ artist, billboard }) => {
   const { id } = billboard;
-  const { name, album } = artist
-  const defaultName = name ? name : "";
-  const defaultAlbum = album ? album : "";
+  const { name, album, errors } = artist
+  const defaultName = name ? name : ""
+  const defaultAlbum = album ? album : ""
   return (
     <>
       <h1>New Artist!</h1>
-      { errors && errors }
+      { errors && errors } 
+      {/* if there are errors render errors, if not don't render anything */}
       <form action={`/billboards/${id}/artists`} method="post">
-        
         
         <input 
           type="text"
           required
-          placeholder="Name"
+          placeholder='Name'
           defaultValue={defaultName} 
-          name="artist[name]"/>
+          name="artist[name]"
+          />
       
-        <textarea
+        <input
+        type="text"
         required
-        placeholder="album"
+        placeholder='Album'
         defaultValue={defaultAlbum} 
-        name="artist[album]" type="text" />
+        name="artist[album]"
+         />
         
-        <button type="submit">add artist</button>
+        <button type="submit">Add Artist</button>
       </form>
     </>
-  );
-};
+  )
+}
 
 export default ArtistNew;

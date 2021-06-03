@@ -1,4 +1,4 @@
-// import React from "react";
+// import React from 'react';
 
 // const Songs = ({ artist, songs }) => {
 //   const { name, album, id } =  artist;
@@ -13,7 +13,7 @@
 // };
 // export default Songs;
 
-import React from "react";
+import React from 'react';
 
 const Songs = ({ songs, artist }) => {
   const { name, album, id } = artist;

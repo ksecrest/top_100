@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Billboard = ({ billboard }) => {
   const { theme, id, created_at  } = billboard;
@@ -14,11 +14,11 @@ const Billboard = ({ billboard }) => {
 
       <a href="/">back</a>
       <br />
-      <a href={'/billboards/' + id } data-method="delete">Delete billboard</a>
+      <a href={'/billboards/' + id } data-method="delete">Delete Billboard</a>
       <br />
       <a href={'/billboards/' + id + '/edit'}>Edit Billboard</a>
       <br />
-      <a href={`/billboards/</a>
+      <a href={`/billboards/${id}/artists`}>Show Artists</a>
     </>
   );
 };

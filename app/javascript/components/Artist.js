@@ -1,18 +1,27 @@
-import React from "react";
+import React from 'react';
 
 const Artist = ({ artist, billboard }) => {
-  const { name } = artist;
+  const { theme, id, created_at  } = billboard;
+  const { name, album, id } = artist;
   return (
     <>
-      <div className="artist-card">
-        <h1>{name}</h1>
-        <h6>Billboard: {billboard.name}</h6>
-        <a href={`/billboards`}>billboards</a>
-        <a href={`/billboards/${billboard.id}`}>billboard show</a>
-        <a href={`/artists/${artist.id}/songs`}>view songs</a>
-      </div>
+      <h3>{ name }</h3>
+      <p>
+        {album}
+      </p>
+      <p>
+        id: {id}
+      </p>
+
+      <a href="/">back</a>
+      <br />
+      <a href={'/billboards/' + id } data-method="delete">Delete Billboard</a>
+      <br />
+      <a href={'/billboards/' + id + '/edit'}>Edit Billboard</a>
+      <br />
+      <a href={`/billboards/${id}/artists`}>Show Artists</a>
     </>
   );
 };
 
-export default Artist;
+export default Billboard;

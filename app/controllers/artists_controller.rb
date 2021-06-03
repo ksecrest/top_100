@@ -1,13 +1,14 @@
 class ArtistsController < ApplicationController
   
 before_action :set_billboard
-before_action :set_artist, only: [:show, :edit, :update, :destroy]
+before_action :set_artist, only: [:show, :edit, :update, :destroy ]
   
   #read
   def index
     @artists = @billboard.artists
-    render component = 'Artists', props: {artists: @artists, billboard: @billboard }
+    render component: 'Artists', props: { artists: @artists, billboard: @billboard }
   end
+
 
   def show
     render component: 'Artist', props: { artist: @artist, billboard: @billboard }
@@ -21,10 +22,11 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy]
   def create
     @artist = @billboard.artists.new(artist_params)
     if @artist.save
-      # redirect_to [@billboard, @artist]
-      redirect_to billboard_artists_path(@billboard)
+      redirect_to [@billboard, @artist]
+      # redirect_to billboard_artists_path(@billboard)
+      # redirect_to root_path
     else
-      render :new
+      render component: "ArtistNew", props: { artist: @artist, billboard: @billboard }
     end
   end
 
@@ -35,7 +37,8 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy]
   def update
     if @artist.update(artist_params)
       # redirect_to [@billboard, @artist]
-      redirect_to billboard_artists_path(@billboard)
+      # redirect_to billboard_artists_path(@billboard)
+      redirect_to {@billboard, @artist}
     else
       render :edit
     end
@@ -44,6 +47,7 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy]
   def destroy
     @artist.destroy
      # redirect_to [@billboard, @artist]
+    # redirect_to billboard_artists_path(@billboard)
     redirect_to billboard_artists_path(@billboard)
   end
 
@@ -57,7 +61,8 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy]
   end
 
   def artist_params
-    params:require(:artist).permit(:name, :album)
+    params.require(:artist).permit( :name, :album )
   end
 
 end
+
