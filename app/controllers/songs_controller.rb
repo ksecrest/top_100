@@ -41,7 +41,7 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   
   def update
     if @song.update(song_params)
-      redirect_to [@artist, @song]
+      redirect_to root_path
     else
       render component: "SongEdit", props: {artist: @artist, song: @song}
     end

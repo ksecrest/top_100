@@ -20,14 +20,13 @@ const Songs = ({ artist, songs }) => {
           <div>
             <h3>{song.title}</h3>
             {/* /artists/:artist_id/songs/:id(.:format) */}
-            <a href={`/artists/${id}/songs/song.id`}>Show Song</a>
-
+            <a href={`/artists/${id}/songs/${song.id}`}>Show Song</a>
             {' '}
             {/* /artists/:artist_id/songs/:id/edit(.:format) */}
-            <a href={`/artists/${id}/songs/song.id/edit`}>Edit Song</a>
+            <a href={`/artists/${id}/songs/${song.id}/edit`}>Edit Song</a>
             {' '}
             {/* /artists/:artist_id/songs/:id(.:format) */}
-            <a href={`/artists/${id}/songs/song.id/`} data-method="delete">Delete Song</a>
+            <a href={`/artists/${id}/songs/${song.id}/`} data-method="delete">Delete Song</a>
           </div>
       ))}
     </>
