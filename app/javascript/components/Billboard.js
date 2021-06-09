@@ -12,7 +12,7 @@ const Billboard = ({ billboard }) => {
         id: {id}
       </p>
 
-      <a href="/">back</a>
+      <a href='/billboards/'>back</a>
       <br />
       <a href={'/billboards/' + id } data-method="delete">Delete Billboard</a>
       <br />

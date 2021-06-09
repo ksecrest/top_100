@@ -1,7 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 const Song = ({ artist, song }) => {
   const { name, album, id } = artist;
+  const { title } = song
   return (
     <>
       <div className="song-card">

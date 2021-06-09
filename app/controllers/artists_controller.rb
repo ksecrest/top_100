@@ -22,7 +22,7 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy ]
   def create
     @artist = @billboard.artists.new(artist_params)
     if @artist.save
-      redirect_to [@billboard, @artist]
+      redirect_to billboard_artists_path
       # redirect_to billboard_artists_path(@billboard)
       # redirect_to root_path
     else
@@ -47,8 +47,8 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy ]
   def destroy
     @artist.destroy
      # redirect_to [@billboard, @artist]
-    # redirect_to billboard_artists_path(@billboard)
-    redirect_to billboard_artists_path(@billboard)
+    redirect_to billboard_artists_path(@artist)
+ 
   end
 
   private

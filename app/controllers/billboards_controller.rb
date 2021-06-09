@@ -1,20 +1,15 @@
 class BillboardsController < ApplicationController
 
 before_action :set_billboard, only: [:show, :update, :edit, :destroy]
-  #new index page 
-
-  # def index
-  #   render component: "testing"
-  # end
   def index
     @billboards = Billboard.all
     render component: 'Billboards', props: {billboards: @billboards}
   end
-# new show page
+
   def show
     render component: 'Billboard', props: { billboard: @billboard}
   end
-# new new page
+  
   def new
     @billboard = Billboard.new
     render component: 'BillboardNew', props: { billboard: @billboard}
@@ -23,19 +18,19 @@ before_action :set_billboard, only: [:show, :update, :edit, :destroy]
   def create
     @billboard = Billboard.new(billboard_params)
     if @billboard.save
-      redirect_to root_path
+      redirect_to billboards_path
     else 
       render component: 'BillboardNew', props: { billboard: @billboard}
     end
   end
-# new edit page
+
   def edit
     render component: 'BillboardEdit', props: { billboard: @billboard }
   end
 
   def update
     if @billboard.update(billboard_params)
-      redirect_to root_path
+      redirect_to billboards_path
     else
       render :edit
     end
@@ -43,7 +38,7 @@ before_action :set_billboard, only: [:show, :update, :edit, :destroy]
 
   def destroy
     @billboard.destroy
-    redirect_to root_path
+    redirect_to billboards_path
   end
 
   private
