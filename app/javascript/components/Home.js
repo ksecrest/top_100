@@ -19,11 +19,11 @@ const styles = {
 const Home = () => (
 
 <>
-    <h1 style={{background: "yellow", fontSize: '40px'}}>Home Page</h1>
-    <h1 style={styles.mainHeader}>Home Page</h1>
-    <h1 style={styles.subHeader}>Home Page</h1>
-    <h1 className="title">this is the next heading</h1>
-    <h1 className="subTitle">next subheading: I love cats</h1>
+    <h1 style={{background: "yellow", fontSize: '40px'}}>Welcome</h1>
+    <h1 style={styles.mainHeader}>For Easy Listening</h1>
+    <h1 style={styles.subHeader}>At Home, in the Car, or at Work</h1>
+    <h1 className="title">this is the ultimate in listening satisfaction</h1>
+    <h1 className="subTitle">for those that love music</h1>
 </>
 )
 export default Home;

@@ -20,7 +20,8 @@ const Artists = ({ billboard, artists }) => {
             {' '}
             <a href={url + '/' + artist.id + '/edit'}>Edit Artist</a>
             {' '}
-            <a href={url + '/' + artist.id} data-method="delete">Delete Artist</a>
+            <a href={url + '/' + artist.id + '/' } data-method="delete">Delete Artist</a>
+            {/* <a href={`/artists/${id}/songs/${song.id}/`} data-method="delete">Delete Song</a> */}
           </div>
         ))
       }

@@ -47,7 +47,7 @@ before_action :set_artist, only: [:show, :edit, :update, :destroy ]
   def destroy
     @artist.destroy
      # redirect_to [@billboard, @artist]
-    redirect_to billboard_artists_path(@artist)
+    redirect_to billboard_artists_path(@billboard)
  
   end
 
