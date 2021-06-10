@@ -1,20 +1,21 @@
-import React from 'react';
+import React from 'react'
 
-const Song = ({ song, artist }) => {
-  const { title } = song;
+const Song = ({ artist, song }) => {
+  const { name, album, id } = artist;
+  const { title } = song
   return (
     <>
       <div className="song-card">
-        <h1>{title}</h1>
-        <h6>Artist: {artist.name}</h6>
-        <a href={`/billboards`}>billboards</a>
+        <h1>{ song.title}</h1>
+        <h6>Artist: { name } {album} </h6>
+        {/* <a href={`/bill`}>billboards</a>
         <a href={`/billboards/${billboard.id}`}>billboard show</a>
         <a href={`/billboards/artists`}>artists</a>
-        <a href={`/billboards/artists/${artist.id}`}>artist show</a>
-        <a href={`/artists/${artist.id}/songs`}>view songs</a>
+        <a href={`/billboards/artists/${id}`}>artist show</a> */}
+        <a href={`/artists/${id}/songs`}>view songs</a>
       </div>
     </>
   );
 };
 
-export default Artist;
+export default Song;

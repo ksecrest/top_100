@@ -7,7 +7,7 @@ const SongEdit = ({ song, artist }) => {
   return (
     <>
       <h1>Edit Song!</h1>
-      <form action={`/artist/${id}/songs/${song.id}`} method="post">
+      <form action={`/artists/${id}/songs/${song.id}`} method="post">
       <input type="hidden" name="_method" value="patch" />
       <p>Name</p>
       <input

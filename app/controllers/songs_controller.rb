@@ -18,7 +18,7 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
     render component: "Song", props: { song: @song, artist: @artist }
   end
 
-#create/post
+#create/postgitgcod
   def new
     @song = @artist.songs.new
     render component: "SongNew", props: { song: @song, artist: @artist }
@@ -41,7 +41,8 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   
   def update
     if @song.update(song_params)
-      redirect_to [@artist, @song]
+      #t/artists/:artist_id/songs(.:format)
+      redirect_to artist_songs_path
     else
       render component: "SongEdit", props: {artist: @artist, song: @song}
     end

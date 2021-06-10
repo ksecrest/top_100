@@ -4,7 +4,7 @@ const About = () => (
 
 <>
     <h1>About Page</h1>
-    <p>This is the most up-to-date music databases of our time</p>
+    <p>Come here to hear all the newest hits in all variaties of genres, with hit artsits such as Billie Eilish, Mickey Mouse, and more!!  </p>
 
 </>
 
